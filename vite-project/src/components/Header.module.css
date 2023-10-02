@@ -1,0 +1,49 @@
+/* Header.module.css */
+.header {
+  display: flex; /* Utilisation de flexbox pour aligner les éléments horizontalement */
+  align-items: center; 
+    padding: 10px;
+  }
+  
+  .logo {
+    width: 150px; /* Ajustez la taille du logo selon vos besoins */
+    height: 50px;
+    margin-left: 150px; /* Espace autour du logo */
+    margin-bottom: 20px;
+    background-image: url('../images/Logo.PNG'); /* Chemin vers l'image */
+    background-size: cover; /* Ajustez la taille de l'image pour couvrir le header */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+   
+  }
+  
+  .header-right {
+    /* Vous pouvez utiliser différentes propriétés CSS pour positionner le menu */
+  position: relative; /* Position relative pour positionner le menu par rapport au logo */
+
+    float: right;
+    margin-left: 900px; /* Ajustez l'espace à droite du menu */
+  }
+  /* Style pour les liens du menu */
+.nav-link {
+  color: red; /* Couleur rouge pour les liens */
+  text-decoration: none; /* Supprimer le soulignement par défaut des liens */
+  margin-right: 20px; /* Espacement entre les liens */
+}
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+  nav li {
+    display: inline;
+    margin-right: 20px;
+    
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+  }
+  
