@@ -47,3 +47,15 @@
     color: white;
   }
   
+
+
+.pending {
+ 
+  text-decoration: none; 
+}
+
+.active-link {
+  text-decoration: none; 
+  color: red;
+  border-bottom: 2px solid red; /* Ligne de soulignement rouge en dessous du texte */
+}

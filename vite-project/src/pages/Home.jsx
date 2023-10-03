@@ -1,7 +1,7 @@
 import React from 'react';
 import logementsData from '../../data/logements.json';
 import styles from './Home.module.css'; // Import du fichier CSS modulaire
-
+import Card from '../components/Card'
 function Home() {
   return (
     <div>
@@ -12,15 +12,9 @@ function Home() {
 
       {/* Cartes */}
       <div className={styles['card-container']}>
-        {logementsData.map((logement) => (
-          <div className={styles.card} key={logement.id}>
-            {/* Photo de couverture avec bord arrondi */}
-            <div className={styles['card-cover-container']}>
-              <img src={logement.cover} alt={logement.title} className={styles['card-cover']} />
-            </div>
-            {/* Titre du logement au-dessus de la photo */}
-            <h3 className={styles['card-title']}>{logement.title}</h3>
-          </div>
+        {logementsData.map((logement) => ( 
+          // ici le composant card
+        <Card key={logement.id} logement={logement} />
         ))}
       </div>
     </div>

@@ -1,0 +1,41 @@
+
+.card-cover {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ajustez la taille de l'image */
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+  }
+  
+  .card-title {
+    position: relative; /* Position absolue pour superposer le titre */
+    top: -60px; /*  titre en bas de la carte */
+    left: 0; /* Alignez le titre à gauche de la carte */
+    padding: 10px;
+    margin: 0;
+    color: white; /* Couleur du titre */
+    width: 80%;
+    text-align: center;
+    font-size: 12px;
+    background-color: gray;
+  }
+  /* Styles pour le conteneur des cartes */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+
+  
+  /* Styles pour chaque carte */
+  .card {
+    width: calc(33.33% - 100px); /* Pour créer une disposition en grille de 3 colonnes */
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+  
+  }
