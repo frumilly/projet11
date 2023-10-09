@@ -1,61 +1,35 @@
 import React, { useState } from 'react';
-import styles from './About.module.css'; // Importez le fichier CSS modulaire
+import styles from './Test.module.css';
 
-function About() {
-  // État pour gérer l'affichage/masquage du texte en rouge
-  const [showText, setShowText] = useState(false);
+function Test() {
+  const [expandedRectangles, setExpandedRectangles] = useState([false, false, false, false]);
 
-  // Fonction pour basculer l'affichage du texte en rouge
-  const toggleText = () => {
-    setShowText(!showText);
+  const toggleExpansion = (index) => {
+    const newExpandedRectangles = [...expandedRectangles];
+    newExpandedRectangles[index] = !newExpandedRectangles[index];
+    setExpandedRectangles(newExpandedRectangles);
   };
 
   return (
-    <div className="page-container">
-      {/* En-tête (ajoutez le contenu approprié) */}
-      <header>
-        {/* Logo et menu */}
-      </header>
-
-      {/* Contenu de la page */}
-      <main>
-        {/* Photo de couverture (ajoutez le contenu approprié) */}
-        <div className={styles['about-cover-image']}></div>
-      </main>
-       <div className={styles['collapsesDiv']}>
-      {/* Élément avec basculement */}
-      <div className={styles['about-element']} onClick={toggleText}>
-        <div className={styles['red-rectangle']}>
-          <span className={styles['label']}>Fiabilité</span>
-          <div className={styles['arrow']}></div>
+    <div className={styles.container}>
+      {expandedRectangles.map((isExpanded, index) => (
+        <div key={index} className={styles.rectangleContainer}>
+          <div
+            className={styles.rectangle}
+            onClick={() => toggleExpansion(index)}
+          >
+            <span className={styles.label}>Cliquez-moi</span>
+            <div className={styles.arrow}></div>
+          </div>
+          {isExpanded && (
+            <div className={styles.grayRectangle}>
+              <p>Texte {index + 1}</p>
+            </div>
+          )}
         </div>
-      </div>
-
-      {/* Texte associé au basculement */}
-      <div className={`${styles['gray-text']} ${showText ? styles['show'] : ''}`} >
-        Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.
-      </div>
-
-      {/* Élément avec basculement (ajoutez le contenu approprié) */}
-      <div className={styles['about-element']} onClick={toggleText}>
-        <div className={styles['red-rectangle']}>
-          <span className={styles['label']}>Fiabilité</span>
-          <div className={styles['arrow']}></div>
-        </div>
-      </div>
-
-      {/* Texte associé au basculement (ajoutez le contenu approprié) */}
-      <div className={`${styles['gray-text']} ${showText ? styles['show'] : ''}`}>
-        Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.
-      </div>
-      </div>
-
-      {/* Pied de page (ajoutez le contenu approprié) */}
-      <footer>
-        {/* Contenu du pied de page */}
-      </footer>
+      ))}
     </div>
   );
 }
 
-export default About;
+export default Test;

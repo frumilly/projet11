@@ -5,4 +5,10 @@
     text-align: center;
     padding: 10px 0;
   }
-  
+  .logo {
+    width: 180px;
+    height: 100px;
+    margin-left: 650px; /* Espace autour du logo */
+    background-image: url('../images/logo_footer.PNG'); /* Chemin vers l'image */
+    background-size: cover; 
+  }

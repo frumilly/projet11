@@ -1,103 +1,40 @@
-/* About.module.css */
-#root {
-  width: 100%;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-/* Styles pour la photo de couverture */
-.about-cover-image {
-    background-image: url(/src/images/about_cover.PNG);
-    background-size: cover;
-    background-position: center center;
-    height: 170px;
-    width: 80%;
-    border-radius: 10px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-    margin-right: 160px;
+
+.rectangle {
+  cursor: pointer;
+  width: 1050px; /* Largeur ajustée */
+  height: 40px;
+  background-color: #FF6060;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  user-select: none;
+  margin-bottom: 20px; /* Ajustement de la marge inférieure */
+  margin-top: 20px;
 }
-.collapsesDiv{
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 300px;
-  width: 60%;
+
+.label {
+  font-weight: bold;
 }
-  
-  /* Styles pour les éléments sous la photo de couverture */
-  .about-elements-container {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-  }
-  
-  /* Styles pour chaque élément (rectangle) */
-  .about-element {
-    cursor: pointer;
-   
-    align-items: center;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #FF6060;
-    color: white;
-    position: relative;
-  }
-  .red-rectangle{
-   display: flex;
-    justify-content: space-between; /* Aligner "Fiabilité" à gauche et la flèche à droite */
-  }
-  
-  /* Styles pour le texte "Fiabilité" */
-  .label {
-    font-weight: bold;
-  }
-  
-  /* Styles pour la flèche à droite (dirigée vers le bas) */
-  .arrow::after {
-    content: '⮟'; /* Utilisation d'un caractère flèche vers le bas Unicode */
-    margin-left: 10px;
-    font-size: 16px; /* Ajustez la taille de la flèche selon vos besoins */
-    transition: transform 0.2s ease;
-  }
-  
-  /* Styles pour le texte associé au basculement */
-  .gray-text {
-    background-color: #F6F6F6;
-    color:  #FF6060;
-    padding: 10px;
-   border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-  
-  }
-  
-  /* Styles pour la flèche */
-  .about-arrow {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    margin-right: 10px;
-  }
-  
-  /* Styles pour le texte de l'élément */
-  .about-text {
-    flex: 1;
-    color: #f0f0f0;
-  }
-  
-  /* Styles pour le texte en rouge qui apparaît au clic */
-  .red-text {
-    background-color: gray; /* Couleur de fond grise */
-    color: red; /* Couleur du texte en rouge */
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    transition: height 0.3s ease; /* Animation de transition */
-  }
-  
- 
-  
+
+.arrow::after {
+  content: '⮟';
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.grayRectangle {
+  width: 1050px; /* Largeur ajustée pour correspondre au rectangle rouge */
+  background-color: #F6F6F6;
+  border-radius: 5px;
+  color: #FF6060;
+  padding: 10px;
+  margin-top: -20px; 
+  margin-bottom: 20px;
+}

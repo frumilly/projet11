@@ -1,0 +1,46 @@
+/* Styles pour la page Detail */
+.carousel {
+    /* Styles pour le carrousel d'images */
+  }
+  
+  h1 {
+    /* Styles pour le titre */
+    color: #FF6060; /* Texte en rouge */
+  }
+  
+  .host {
+    /* Styles pour les informations sur l'hôte */
+    display: flex;
+    align-items: center;
+  }
+  
+  .host img {
+    
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%; /* Pour une image ronde */
+    margin-right: 10px; /* Espacement entre l'image et le nom */
+  }
+  
+  .tags {
+    /* Styles pour les balises/tags */
+    display: flex;
+    flex-wrap: wrap; 
+    margin-top: 10px; 
+  }
+  
+  .tag {
+    /* Styles pour chaque balise/tag */
+    background-color: #FF6060;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5px; /* Espacement entre les balises */
+    margin-bottom: 5px; /* Espacement entre les balises et les autres éléments */
+  }
+  
+  .rectangles {
+    /* Styles pour le conteneur des rectangles */
+    display: flex;
+    justify-content: space-between; /* Espacement entre les rectangles */
+  }
+  
