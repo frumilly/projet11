@@ -1,0 +1,11 @@
+/* Tag.module.css */
+.tag {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #FF6060;;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+  

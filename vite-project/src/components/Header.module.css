@@ -65,3 +65,16 @@
   color: #FF6060;
   border-bottom: 2px solid #FF6060; /* Ligne de soulignement rouge en dessous du texte */
 }
+@media (max-width: 768px) {
+  .header-right {
+    font-size: 10px;
+    margin-left: 10px; 
+  }
+  .logo {
+   
+    margin-left: 20px; /* Espace autour du logo */
+    margin-bottom: 0px;
+  
+   
+  }
+}

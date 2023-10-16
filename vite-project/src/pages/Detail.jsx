@@ -1,64 +1,89 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import logementsData from '../../data/logements.json';
 import styles from './Detail.module.css';
-import Rectangle from '../components/Rectangle'; // Importez le composant Rectangle
+import Collapse from '../components/Collapse';
+import Rating from '../components/Rating';
+import Tag from '../components/Tag';
+import Carousel from '../components/Carousel';
 
 function Detail() {
-  // Obtenez l'ID à partir des paramètres d'URL
   const { id } = useParams();
+  const navigate = useNavigate();
+  const [logement, setLogement] = useState(null);
 
-  // Recherchez le logement avec l'ID correspondant dans les données
-  const logement = logementsData.find((logement) => logement.id === id);
+  useEffect(() => {
+    const foundLogement = logementsData.find((logement) => logement.id === id);
+    if (!foundLogement) {
+      // Redirection vers la page d'erreur si l'ID n'est pas trouvé
+      navigate('/error');
+    } else {
+      // Mise à jour de l'état du composant avec le logement trouvé
+      setLogement(foundLogement);
+    }
+  }, [id, navigate]);
 
   if (!logement) {
-    // Gérer le cas où le logement n'est pas trouvé
-    return <div>Logement non trouvé</div>;
+    return null;
   }
-
+  const rectanglesData = [
+    { title: 'Fiabilité', grayText: ' Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.' },
+    { title: 'Respect', grayText: 'La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.' },
+    { title: 'Service', grayText: 'La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.' },
+    { title: 'Sécurité', grayText: 'La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l\'hôte qu\'au locatairen cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.' },
+  ];
   return (
     <div>
-      {/* Carrousel d'images */}
-      <div className={styles.carousel}>
-        {/* Affichez images ici */}
-      </div>
+      <div className={styles.detailPage}>
 
-      {/* Titre */}
-      <h1>{logement.title}</h1>
+        <Carousel images={logement.pictures} />
+        <div className={styles.title_photo}>
+        <div className={styles.title}>{logement.title}</div>
+          <div className={styles.host}>
+          <div className={styles.host_name}>{logement.host.name}</div>
+            <img src={logement.host.picture} alt={logement.host.name} />
 
-      {/* Host */}
-      <div className={styles.host}>
-        <img src={logement.host.picture} alt={logement.host.name} />
-        <p>{logement.host.name}</p>
-      </div>
+          </div>
+        </div>
+        <div className={styles.location}>{logement.location}</div>
 
-      {/* Location */}
-      <p>{logement.location}</p>
+        <div className={styles.tag_rating}>
+          <div className={styles.tags}>
+            {logement.tags.map((tag, index) => (
+              <Tag key={index} text={tag} />
+            ))}
+          </div>
+          <div className={styles.rating}>
+            <Rating rating={logement.rating} />
+          </div>
+        </div>
+        <div className={styles.rectangles}>
+          <div className="container">
+            <Collapse
+              key={1}
+              title="Description"
+              grayText={logement.description}
+              width="580px"
+            />
+          </div>
+          <div className="container">
+            <Collapse
+              key={2}
+              title="Équipement"
+              grayText={logement.equipments.map((equipment) => (
+                <span key={equipment}>
+                  {equipment}
+                  <br />
+                </span>
+              ))}
+              width="580px"
+            />
+          </div>
 
-      {/* Tags */}
-      <div className={styles.tags}>
-        {logement.tags.map((tag) => (
-          <span key={tag} className={styles.tag}>
-            {tag}
-          </span>
-        ))}
-      </div>
+        </div>
 
-      {/* Deux rectangles sur la même ligne */}
-      <div className={styles.rectangles}>
-        {/* Premier rectangle avec une largeur différente */}
-        <Rectangle
-          title="Rectangle 1"
-          isExpanded={false} // Vous pouvez définir ici si le rectangle doit être étendu par défaut
-          grayText="Contenu du Rectangle 1"
-        />
 
-        {/* Deuxième rectangle avec une autre largeur */}
-        <Rectangle
-          title="Rectangle 2"
-          isExpanded={false} // Vous pouvez définir ici si le rectangle doit être étendu par défaut
-          grayText="Contenu du Rectangle 2"
-        />
+
       </div>
     </div>
   );

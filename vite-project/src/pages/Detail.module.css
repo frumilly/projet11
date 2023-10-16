@@ -1,46 +1,80 @@
-/* Styles pour la page Detail */
 .carousel {
-    /* Styles pour le carrousel d'images */
-  }
   
-  h1 {
-    /* Styles pour le titre */
-    color: #FF6060; /* Texte en rouge */
-  }
-  
-  .host {
-    /* Styles pour les informations sur l'hôte */
-    display: flex;
-    align-items: center;
-  }
-  
-  .host img {
+}
+
+.title {
+  font-size: 24px;
+  color: #FF6060;
+}
+.title_photo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tag_rating{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detailPage{
+  margin-right: 150px;
+  margin-left: 150px;
+}
+
+.rating{
+  font-size: 24px;
+  color: #FF6060;
+}
+.location {
+  color: #FF6060;
+}
+.host_name{
+  color: #FF6060;
+  width:30%;
+}
+.host {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.host img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Pour une image de profil ronde */
+  margin-right: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.tag {
+  background-color: #FF6060;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.rectangles {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.container {
+  width: 20%;
+}
+.rectangle {
+  width: 50% !important;
+  /* Autres styles par défaut pour les composants Rectangle */
+}
+@media (max-width: 768px) {
+  .detailPage{
     
-    width: 50px; 
-    height: 50px;
-    border-radius: 50%; /* Pour une image ronde */
-    margin-right: 10px; /* Espacement entre l'image et le nom */
+    margin-left: 50px;
   }
   
-  .tags {
-    /* Styles pour les balises/tags */
-    display: flex;
-    flex-wrap: wrap; 
-    margin-top: 10px; 
-  }
-  
-  .tag {
-    /* Styles pour chaque balise/tag */
-    background-color: #FF6060;
-    color: white;
-    padding: 5px 10px;
-    margin-right: 5px; /* Espacement entre les balises */
-    margin-bottom: 5px; /* Espacement entre les balises et les autres éléments */
-  }
-  
-  .rectangles {
-    /* Styles pour le conteneur des rectangles */
-    display: flex;
-    justify-content: space-between; /* Espacement entre les rectangles */
-  }
-  
+}

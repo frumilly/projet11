@@ -1,0 +1,68 @@
+.carousel {
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  text-align: center;
+}
+.imageContainer img{
+  width: 1210px;
+  height: 500px;
+}
+.image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Pour centrer l'image horizontalement */
+}
+
+.imageIndicator {
+  position: relative;
+  bottom: -120px;
+  left: 0%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 0 0 10px 10px;
+  font-size: 14px;
+  margin-top: 200px;
+}
+
+.navigation {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prevButton,
+.nextButton {
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.prevButton {
+  margin-left: 10px;
+}
+
+.nextButton {
+  margin-right: 10px;
+}
+@media (max-width: 768px) {
+  .carousel {
+    width: 50%; /* Réduisez la largeur pour s'adapter à l'écran mobile */
+  }
+  .imageContainer img{
+    width: 270px;
+  height: 200px;
+  object-fit:cover;
+  }
+
+}

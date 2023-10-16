@@ -12,3 +12,8 @@
     background-image: url('../images/logo_footer.PNG'); /* Chemin vers l'image */
     background-size: cover; 
   }
+  @media (max-width: 768px) {
+    .logo {
+      margin-left: 100px; 
+    }
+  }

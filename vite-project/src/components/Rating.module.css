@@ -1,0 +1,15 @@
+/* Rating.css */
+.rating {
+    font-size: 24px; 
+  }
+  
+  .rating span {
+    margin-right: 4px; 
+    cursor: pointer; 
+  }
+  
+  /* Étoiles pleines */
+  .rating span.star-full {
+    color: #FF6060;;
+  }
+  

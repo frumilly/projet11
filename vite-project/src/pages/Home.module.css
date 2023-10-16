@@ -27,3 +27,20 @@
     margin-left: 200px;
     margin-right: 200px;
   }
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column; /* Afficher les images en une seule colonne */
+     
+      margin: 10px; /* Supprimer les marges latérales */
+    }
+  
+  .center-logo img {
+    margin-bottom: 10px; /* Espacement entre le logo et le menu */
+  }
+
+  .menu {
+    text-align: center; /* Centrer le texte du menu */
+    margin-top: 0; /* Supprimer l'espacement du haut */
+  }
+
+}

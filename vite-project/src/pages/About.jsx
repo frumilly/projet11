@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './About.module.css';
 import Banner from '../components/Banner';
-import Rectangle from '../components/Rectangle';
+import Collapse from '../components/Collapse';
 
 function About() {
-  //Pourquoi useState? Réactivité,Rendu conditionnel rapide,Optimisation des performances , utilisation dans les fonctions spécaiales de react les hook
-  const [expandedRectangles, setExpandedRectangles] = useState([false, false, false, false]);
-
-  const toggleExpansion = (index) => {
-    const newExpandedRectangles = [...expandedRectangles];
-    newExpandedRectangles[index] = !newExpandedRectangles[index];
-    setExpandedRectangles(newExpandedRectangles);
-  };
-
   // Définissez les titres et les textes pour chaque rectangle
   const rectanglesData = [
     { title: 'Fiabilité', grayText: ' Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.' },
@@ -23,19 +14,17 @@ function About() {
 
   return (
     <div>
-      {/* Photo de couverture différente */}
       <Banner
         coverImage="about_cover.PNG"
         text=""
       />
       <div className={styles.container}>
-        {expandedRectangles.map((isExpanded, index) => (
-          <Rectangle
+        {rectanglesData.map((data, index) => (
+          <Collapse
             key={index}
-            title={rectanglesData[index].title}
-            isExpanded={isExpanded}
-            onClick={() => toggleExpansion(index)}
-            grayText={rectanglesData[index].grayText}
+            title={data.title}
+            grayText={data.grayText}
+            width="1050px" 
           />
         ))}
       </div>
