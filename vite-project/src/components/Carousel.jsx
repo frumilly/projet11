@@ -16,21 +16,28 @@ function Carousel({ images }) {
     );
   };
 
+  // Condition pour vérifier s'il y a plus d'une image
+  const hasMultipleImages = images.length > 1;
+
   return (
     <div className={styles.carousel}>
       <div className={styles.imageContainer}>
         <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
       </div>
       <div className={styles.navigation}>
-        <button className={styles.prevButton} onClick={goToPreviousImage}>
-          &lt;
-        </button>
-        <div className={styles.imageIndicator}>
-          {currentImageIndex + 1}/{images.length}
-        </div>
-        <button className={styles.nextButton} onClick={goToNextImage}>
-          &gt;
-        </button>
+        {hasMultipleImages && ( // Affiche les boutons de navigation uniquement s'il y a plus d'une image
+          <>
+            <button className={styles.prevButton} onClick={goToPreviousImage}>
+              &lt;
+            </button>
+            <div className={styles.imageIndicator}>
+              {currentImageIndex + 1}/{images.length}
+            </div>
+            <button className={styles.nextButton} onClick={goToNextImage}>
+              &gt;
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

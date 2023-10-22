@@ -31,6 +31,7 @@
   }
   .expanded .arrow {
     transform: rotate(180deg); 
+    margin-bottom: 15px;
   }
   
   .grayRectangle {
@@ -44,6 +45,10 @@
   }
   @media (max-width: 768px) {
     .rectangle {
-      width: 50% !important; /* Nouvelle largeur sur les appareils mobiles */
+      width: 250px !important; /* Nouvelle largeur sur les appareils mobiles */
+      height:30px;
+    }
+    .grayRectangle{
+      width:250px !important;
     }
   }

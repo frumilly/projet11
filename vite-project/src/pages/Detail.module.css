@@ -1,37 +1,41 @@
-.carousel {
-  
+/* Styles pour les écrans larges */
+.detailPage {
+  margin-right: 150px;
+  margin-left: 150px;
 }
 
 .title {
   font-size: 24px;
   color: #FF6060;
 }
+
 .title_photo {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.tag_rating{
+
+.tag_rating {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.detailPage{
-  margin-right: 150px;
-  margin-left: 150px;
-}
 
-.rating{
+.rating {
   font-size: 24px;
   color: #FF6060;
 }
+
 .location {
   color: #FF6060;
 }
-.host_name{
+
+.host_name {
   color: #FF6060;
-  width:30%;
+  width: 30%;
+  margin-right: 20px;
 }
+
 .host {
   display: flex;
   align-items: center;
@@ -41,7 +45,7 @@
 .host img {
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* Pour une image de profil ronde */
+  border-radius: 50%;
   margin-right: 10px;
 }
 
@@ -64,17 +68,72 @@
   justify-content: space-between;
   margin-top: 10px;
 }
+
 .container {
   width: 20%;
 }
+
 .rectangle {
   width: 50% !important;
   /* Autres styles par défaut pour les composants Rectangle */
 }
+
+/* Styles pour les écrans étroits (version mobile) */
 @media (max-width: 768px) {
-  .detailPage{
-    
+
+  .detailPage {
     margin-left: 50px;
   }
-  
+
+  .title_photo {
+    flex-direction: column; /* Met le titre en haut des tags */
+    align-items: center;
+  }
+
+  .tag_rating {
+    flex-direction: column; /* Met les tags en dessous des étoiles, du nom et de l'image de l'hôte */
+    align-items: center;
+  }
+
+  .host_name {
+    
+    margin-right: 20px; 
+  }
+
+  .host img {
+    width: 30px; /* Ajustez la taille de l'image de l'hôte pour qu'elle soit plus petite */
+    height: 30px;
+  }
+  .tags{
+    display: block;
+    flex-wrap: nowrap;
+    margin-left: 320px;
+    width: 500px;
+  }
+  .title {
+    font-size: 20px;
+    color: #FF6060;
+    width: 300px;
+    margin-left: 120px;
+}
+.host{
+  position: absolute;
+  display: flex;
+  /* align-items: center; */
+  /* margin-top: 10px; */
+  top: 440px;
+  right: 0px;
+}
+.rating{
+  margin-right:50px;
+  margin-top:20px;
+}
+.location{
+  margin-left:5px;
+}
+.rectangles {
+  display: block;
+  justify-content: space-between;
+  margin-top: 50px;
+}
 }

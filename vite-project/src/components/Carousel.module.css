@@ -6,10 +6,13 @@
   position: relative;
   text-align: center;
 }
-.imageContainer img{
+
+.imageContainer img {
   width: 1210px;
-  height: 500px;
+  height: 300px;
+  object-fit: cover;
 }
+
 .image {
   max-width: 100%;
   height: auto;
@@ -19,10 +22,10 @@
 
 .imageIndicator {
   position: relative;
-  bottom: -120px;
+  bottom: -10px;
   left: 0%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7);
+  background: none; /* Supprime le fond */
   color: white;
   padding: 5px 10px;
   border-radius: 0 0 10px 10px;
@@ -42,10 +45,11 @@
 
 .prevButton,
 .nextButton {
-  background: rgba(255, 255, 255, 0.5);
+  background: none; /* Supprime le fond */
   border: none;
-  font-size: 24px;
+  font-size: 54px;
   cursor: pointer;
+  color: white; /* Définit la couleur du texte en blanc */
 }
 
 .prevButton {
@@ -55,14 +59,25 @@
 .nextButton {
   margin-right: 10px;
 }
+
 @media (max-width: 768px) {
   .carousel {
     width: 50%; /* Réduisez la largeur pour s'adapter à l'écran mobile */
   }
-  .imageContainer img{
-    width: 270px;
-  height: 200px;
-  object-fit:cover;
+  .imageContainer img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
   }
-
+  .prevButton,
+.nextButton {
+  font-size: 50px;
+}
+.navigation{
+  left: -35px;
+}
+.imageIndicator{
+  bottom:20px;
+}
 }

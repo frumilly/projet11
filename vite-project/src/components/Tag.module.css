@@ -8,4 +8,9 @@
     border-radius: 4px;
     margin-right: 8px;
   }
+  @media (max-width: 768px) {
+    .tag {
+    /*padding:0; */
+    }
+  }
   
