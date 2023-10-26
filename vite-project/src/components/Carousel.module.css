@@ -32,6 +32,11 @@
   font-size: 14px;
   margin-top: 200px;
 }
+.prevButton:focus,
+.nextButton:focus {
+  outline: none;
+}
+
 
 .navigation {
   position: absolute;
